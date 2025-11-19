@@ -9,6 +9,9 @@ import {
   BuildingStorefrontIcon,
   MapPinIcon,
 } from "react-native-heroicons/solid";
+import { About } from "./src/Screens/About";
+import { Social } from "./src/Screens/Social";
+import { Location } from "./src/Screens/Location";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -37,15 +40,19 @@ const Tabs = () => (
     })}
   >
     <Tab.Screen name="Home" component={Home} options={{ title: "Home" }} />
-    <Tab.Screen name="About" component={Home} options={{ title: "Über uns" }} />
+    <Tab.Screen
+      name="About"
+      component={About}
+      options={{ title: "Über uns" }}
+    />
     <Tab.Screen
       name="Instagram"
-      component={Home}
+      component={Social}
       options={{ title: "Instagram" }}
     />
     <Tab.Screen
       name="Location"
-      component={Home}
+      component={Location}
       options={{ title: "Der Hafen" }}
     />
   </Tab.Navigator>
