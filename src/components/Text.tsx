@@ -1,9 +1,17 @@
+import { Text, StyleSheet } from "react-native";
+
 interface Props {
-  size: "s" | "m" | "l";
+  name: string;
 }
 
-const Text: React.FC<Props> = ({ size }) => {
-  return null;
+const HeadlineText: React.FC<Props> = ({ name }) => {
+  return <Text style={styles.headline}>{name}</Text>;
 };
 
-export { Text };
+const styles = StyleSheet.create({
+  headline: {
+    fontSize: 20,
+  },
+});
+
+export { HeadlineText };

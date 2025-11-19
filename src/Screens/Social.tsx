@@ -17,12 +17,11 @@ const Social: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: StatusBar.currentHeight,
+    padding: 24,
   },
   scrollView: {},
   text: {
     fontSize: 16,
-    padding: 12,
   },
 });
 
