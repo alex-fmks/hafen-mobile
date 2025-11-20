@@ -8,10 +8,12 @@ import {
   PhotoIcon,
   BuildingStorefrontIcon,
   MapPinIcon,
+  ClipboardIcon,
 } from "react-native-heroicons/solid";
 import { About } from "./src/Screens/About";
 import { Social } from "./src/Screens/Social";
 import { Location } from "./src/Screens/Location";
+import { Menucard } from "./src/Screens/Menucard";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -30,6 +32,8 @@ const Tabs = () => (
           );
         } else if (route.name === "Instagram") {
           iconName = <PhotoIcon fill={focused ? "#3f1ec1ff" : "gray"} />;
+        } else if (route.name === "Menucard") {
+          iconName = <ClipboardIcon fill={focused ? "#3f1ec1ff" : "gray"} />;
         } else if (route.name === "Location") {
           iconName = <MapPinIcon fill={focused ? "#3f1ec1ff" : "gray"} />;
         }
@@ -44,6 +48,11 @@ const Tabs = () => (
       name="About"
       component={About}
       options={{ title: "Über uns" }}
+    />
+    <Tab.Screen
+      name="Menucard"
+      component={Menucard}
+      options={{ title: "Getränkekarte" }}
     />
     <Tab.Screen
       name="Instagram"
@@ -67,21 +76,10 @@ export default function Router() {
           component={Tabs}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="About"
-          component={Tabs}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Instagram"
-          component={Tabs}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Location"
-          component={Tabs}
-          options={{ headerShown: false }}
-        />
+        <Stack.Screen name="About" component={About} />
+        <Stack.Screen name="Instagram" component={Social} />
+        <Stack.Screen name="Location" component={Location} />
+        <Stack.Screen name="Menucard" component={Menucard} />
       </Stack.Navigator>
     </NavigationContainer>
   );
