@@ -11,9 +11,9 @@ const HeadlineText: React.FC<Props> = ({ name }) => {
 const styles = StyleSheet.create({
   headline: {
     fontSize: 20,
-    marginBottom: 24,
-    color: "white",
     fontWeight: "600",
+    color: "white",
+    marginBottom: 6,
   },
 });
 

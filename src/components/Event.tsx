@@ -1,17 +1,30 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 interface Props {
   title: string;
-  description: string;
+  date: string;
+  intro: string;
+  hosts: string;
+  motto: string;
   children?: React.ReactNode;
 }
 
-const Event: React.FC<Props> = ({ title, children, description }) => {
+const Event: React.FC<Props> = ({
+  title,
+  date,
+  children,
+  intro,
+  hosts,
+  motto,
+}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       <View style={styles.verticalAlign}>{children}</View>
-      <Text style={styles.flowText}>{description}</Text>
+      <Text style={styles.date}>{date}</Text>
+      <Text style={styles.flowText}>{intro}</Text>
+      <Text style={styles.flowText}>{hosts}</Text>
+      <Text style={styles.flowText}>{motto}</Text>
     </View>
   );
 };
@@ -29,6 +42,12 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: 6,
   },
+  date: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "white",
+    marginBottom: 6,
+  },
   verticalAlign: {
     marginTop: 8,
     marginBottom: 16,
@@ -37,6 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "white",
     lineHeight: 22,
+    marginBottom: 6,
   },
 });
 

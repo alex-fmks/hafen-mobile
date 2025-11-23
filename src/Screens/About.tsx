@@ -1,13 +1,23 @@
 import React from "react";
-import { Text, ScrollView, StyleSheet, StatusBar } from "react-native";
+import { ScrollView, StyleSheet, Image } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { Hero } from "../components/Hero";
 
 const About: React.FC = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
-          <Text style={styles.text}>Über uns</Text>
+          <Hero>
+            <Image
+              style={{
+                width: "100%",
+                height: 200,
+                borderRadius: 8,
+              }}
+              source={require("../../assets/images/hafen-hero.png")}
+            />
+          </Hero>
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
