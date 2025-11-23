@@ -24,14 +24,14 @@ const Event: React.FC<Props> = ({
       <Text style={styles.date}>{date}</Text>
       <Text style={styles.flowText}>{intro}</Text>
       <Text style={styles.flowText}>{hosts}</Text>
-      <Text style={styles.flowText}>{motto}</Text>
+      <Text style={styles.motto}>{motto}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    padding: 12,
     backgroundColor: "#28282B",
     borderRadius: 8,
     marginBottom: 24,
@@ -54,6 +54,13 @@ const styles = StyleSheet.create({
   },
   flowText: {
     fontSize: 16,
+    color: "white",
+    lineHeight: 22,
+    marginBottom: 6,
+  },
+  motto: {
+    fontSize: 16,
+    fontWeight: 600,
     color: "white",
     lineHeight: 22,
     marginBottom: 6,

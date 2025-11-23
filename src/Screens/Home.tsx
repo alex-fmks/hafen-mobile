@@ -9,8 +9,24 @@ const Home: React.FC = () => {
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
           <Event
-            title="Ein Schiff wird kommen"
-            date="28. November 2025 ab 22 Uhr"
+            title="RIFF RAVE – Premiere im HAFEN!"
+            date="Freitag, 21. November 2025"
+            intro="Der Freitag wird elektrisch. Neue Party. Neuer Sound. Gleicher HAFEN."
+            hosts="DJ Louis Beton schickt euch auf eine Reise durch Techno & House. Dicke Beats, tiefe Basse und elektronische Ekstase. Laser, Nebel, „Riff-Rave!"
+            motto="Seid dabei, wenn wir den Freitag neu verkabeln. ⚡️"
+          >
+            <Image
+              style={{
+                width: "100%",
+                height: 200,
+                borderRadius: 8,
+              }}
+              source={require("../../assets/images/riff-hafen.png")}
+            />
+          </Event>
+          <Event
+            title="Ein Schiff wird kommen!"
+            date="Freitag, 28. November 2025 ab 22 Uhr"
             intro="Ahoi! Ahoi! Ahoi! EIN SCHIFF WIRD KOMMEN - Die schön schwule Schlagernacht im Hafen!"
             hosts="Mit DJ derMicha (@el_wilke) und Gastgeber Micha de Sube (@michadesube)"
             motto="Tanz mit Liebe, tanz mit uns! Ahoi und Remmidemmi mit deiner heißgeliebten Hafencrew."
