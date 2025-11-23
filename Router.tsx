@@ -1,14 +1,14 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Home } from "./src/Screens/Home";
 import {
-  HomeIcon,
   PhotoIcon,
   BuildingStorefrontIcon,
   MapPinIcon,
   ClipboardIcon,
+  CalendarIcon,
 } from "react-native-heroicons/solid";
 import { About } from "./src/Screens/About";
 import { Social } from "./src/Screens/Social";
@@ -25,51 +25,86 @@ const Tabs = () => (
       tabBarIcon: ({ focused }) => {
         let iconName;
         if (route.name === "Home") {
-          iconName = <HomeIcon fill={focused ? "#3f1ec1ff" : "gray"} />;
+          iconName = <CalendarIcon fill={focused ? "#ffb515" : "white"} />;
         } else if (route.name === "About") {
           iconName = (
-            <BuildingStorefrontIcon fill={focused ? "#3f1ec1ff" : "gray"} />
+            <BuildingStorefrontIcon fill={focused ? "#ffb515" : "white"} />
           );
         } else if (route.name === "Instagram") {
-          iconName = <PhotoIcon fill={focused ? "#3f1ec1ff" : "gray"} />;
+          iconName = <PhotoIcon fill={focused ? "#ffb515" : "white"} />;
         } else if (route.name === "Menucard") {
-          iconName = <ClipboardIcon fill={focused ? "#3f1ec1ff" : "gray"} />;
+          iconName = <ClipboardIcon fill={focused ? "#ffb515" : "white"} />;
         } else if (route.name === "Location") {
-          iconName = <MapPinIcon fill={focused ? "#3f1ec1ff" : "gray"} />;
+          iconName = <MapPinIcon fill={focused ? "#ffb515" : "white"} />;
         }
         return iconName;
       },
-      tabBarActiveTintColor: "#3f1ec1ff",
-      tabBarInactiveTintColor: "gray",
+      tabBarActiveTintColor: "#ffb515",
+      tabBarInactiveTintColor: "white",
+      tabBarStyle: {
+        backgroundColor: "#000000",
+      },
     })}
   >
-    <Tab.Screen name="Home" component={Home} options={{ title: "Home" }} />
+    <Tab.Screen
+      name="Home"
+      component={Home}
+      options={{
+        title: "Events",
+        headerTintColor: "#ffffff",
+        headerStyle: { backgroundColor: "#000000" },
+      }}
+    />
     <Tab.Screen
       name="About"
       component={About}
-      options={{ title: "Über uns" }}
+      options={{
+        title: "Über uns",
+        headerTintColor: "#ffffff",
+        headerStyle: { backgroundColor: "#000000" },
+      }}
     />
     <Tab.Screen
       name="Menucard"
       component={Menucard}
-      options={{ title: "Getränkekarte" }}
+      options={{
+        title: "Getränkekarte",
+        headerTintColor: "#ffffff",
+        headerStyle: { backgroundColor: "#000000" },
+      }}
     />
     <Tab.Screen
       name="Instagram"
       component={Social}
-      options={{ title: "Instagram" }}
+      options={{
+        title: "Instagram",
+        headerTintColor: "#ffffff",
+        headerStyle: { backgroundColor: "#000000" },
+      }}
     />
     <Tab.Screen
       name="Location"
       component={Location}
-      options={{ title: "Der Hafen" }}
+      options={{
+        title: "Der Hafen",
+        headerTintColor: "#ffffff",
+        headerStyle: { backgroundColor: "#000000" },
+      }}
     />
   </Tab.Navigator>
 );
 
+const AppTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "#000000",
+  },
+};
+
 export default function Router() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={AppTheme}>
       <Stack.Navigator>
         <Stack.Screen
           name="Tabs"
