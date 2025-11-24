@@ -14,9 +14,9 @@ import { About } from "./src/Screens/About";
 import { Social } from "./src/Screens/Social";
 import { Location } from "./src/Screens/Location";
 import { Menucard } from "./src/Screens/Menucard";
+import { DrinkCategory } from "./src/Screens/DrinkCategory";
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
 
 const Tabs = () => (
   <Tab.Navigator
@@ -102,6 +102,17 @@ const AppTheme = {
   },
 };
 
+export type RootStackParamList = {
+  Tabs: undefined;
+  About: undefined;
+  Instagram: undefined;
+  Location: undefined;
+  Menucard: undefined;
+  DrinkCategory: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
 export default function Router() {
   return (
     <NavigationContainer theme={AppTheme}>
@@ -115,6 +126,16 @@ export default function Router() {
         <Stack.Screen name="Instagram" component={Social} />
         <Stack.Screen name="Location" component={Location} />
         <Stack.Screen name="Menucard" component={Menucard} />
+        <Stack.Screen
+          name="DrinkCategory"
+          component={DrinkCategory}
+          options={{
+            title: "🍺 Bier vom Fass",
+            headerTintColor: "#ffffff",
+            headerStyle: { backgroundColor: "#000000" },
+            headerBackTitle: "Zurück",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
