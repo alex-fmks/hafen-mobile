@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import { ChevronRightIcon } from "react-native-heroicons/solid";
 
 interface Props {
   label: string;
@@ -13,8 +14,9 @@ const MenuItem: React.FC<Props> = ({ label, onPress }) => {
   };
   return (
     <TouchableHighlight {...touchProps} onPress={onPress}>
-      <View>
+      <View style={styles.entry}>
         <Text style={styles.label}>{label}</Text>
+        <ChevronRightIcon fill="#ffffff" style={{ marginRight: 16 }} />
       </View>
     </TouchableHighlight>
   );
@@ -23,17 +25,21 @@ const MenuItem: React.FC<Props> = ({ label, onPress }) => {
 const styles = StyleSheet.create({
   tile: {
     backgroundColor: "#333232ff",
-    width: "50%",
-    marginTop: 7,
+    marginTop: 8,
     justifyContent: "center",
-    alignItems: "center",
     borderRadius: 6,
     height: 50,
   },
   label: {
     color: "#fff",
     fontSize: 16,
+    marginLeft: 16,
     maxWidth: "100%",
+  },
+  entry: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
 

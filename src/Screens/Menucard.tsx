@@ -14,7 +14,75 @@ const Menucard: React.FC = () => {
       <ScrollView>
         <View>
           <MenuItem
-            label="🍺 Bier vom Fass"
+            label="Heisses"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Alkoholfreies"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Fruchtiges"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Bier vom Fass"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Flaschenbier"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Shots"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Shots Eiskalt"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Longdrinks"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Spritiousen"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Rum"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Tequila"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Aperetif"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Anis"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Bitter"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Likör"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Grappa"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Wein"
+            onPress={() => navigation.navigate("DrinkCategory")}
+          />
+          <MenuItem
+            label="Cocktails"
             onPress={() => navigation.navigate("DrinkCategory")}
           />
         </View>
@@ -26,6 +94,7 @@ const Menucard: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     marginLeft: 24,
+    marginRight: 24,
   },
   scrollView: {},
   text: {
