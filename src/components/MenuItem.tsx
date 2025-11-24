@@ -2,21 +2,18 @@ import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 
 interface Props {
   label: string;
-  large: boolean;
   marginLeft?: string;
-  icon?: React.ReactNode;
   onPress?: () => void;
 }
 
-const MenuItem: React.FC<Props> = ({ label, icon, onPress }) => {
+const MenuItem: React.FC<Props> = ({ label, onPress }) => {
   const touchProps = {
     style: styles.tile,
-    underlayColor: "#CD7405",
+    underlayColor: "#222222ff",
   };
   return (
     <TouchableHighlight {...touchProps} onPress={onPress}>
-      <View style={styles.itemLabel}>
-        {icon}
+      <View>
         <Text style={styles.label}>{label}</Text>
       </View>
     </TouchableHighlight>
@@ -24,24 +21,18 @@ const MenuItem: React.FC<Props> = ({ label, icon, onPress }) => {
 };
 
 const styles = StyleSheet.create({
-  itemLabel: {
-    alignItems: "center",
-  },
   tile: {
     backgroundColor: "#333232ff",
-    width: "49%",
+    width: "50%",
     marginTop: 7,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 6,
-    padding: 20,
-    height: 100,
+    height: 50,
   },
   label: {
     color: "#fff",
-    marginTop: 10,
     fontSize: 16,
-    textAlign: "center",
     maxWidth: "100%",
   },
 });
