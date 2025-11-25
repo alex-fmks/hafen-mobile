@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -15,6 +15,7 @@ import { Social } from "./src/Screens/Social";
 import { Location } from "./src/Screens/Location";
 import { Menucard } from "./src/Screens/Menucard";
 import { DrinkCategory } from "./src/Screens/DrinkCategory";
+import { HeaderContext } from "./src/context/HeaderProvider";
 
 const Tab = createBottomTabNavigator();
 
@@ -114,6 +115,7 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function Router() {
+  const { title } = useContext(HeaderContext);
   return (
     <NavigationContainer theme={AppTheme}>
       <Stack.Navigator>
@@ -130,7 +132,7 @@ export default function Router() {
           name="DrinkCategory"
           component={DrinkCategory}
           options={{
-            title: "🍺 Bier vom Fass",
+            title: title,
             headerTintColor: "#ffffff",
             headerStyle: { backgroundColor: "#000000" },
             headerBackTitle: "Zurück",
