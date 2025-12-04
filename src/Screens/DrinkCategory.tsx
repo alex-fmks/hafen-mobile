@@ -1,11 +1,21 @@
-import { Text, View } from "react-native";
+import { RouteProp, useRoute } from "@react-navigation/native";
+import { useContext, useEffect } from "react";
+import { HeaderContext } from "../context/HeaderProvider";
+import { View, Text } from "react-native";
+import { RootStackParamList } from "@/Router";
 
-interface Props {}
+const DrinkCategory = () => {
+  const route = useRoute<RouteProp<RootStackParamList, "DrinkCategory">>();
+  const { category } = route.params;
+  const { setTitle } = useContext(HeaderContext);
 
-const DrinkCategory: React.FC<Props> = () => {
+  useEffect(() => {
+    setTitle(category);
+  }, [category]);
+
   return (
     <View>
-      <Text>Drink</Text>
+      <Text>{category} Inhalt hier…</Text>
     </View>
   );
 };

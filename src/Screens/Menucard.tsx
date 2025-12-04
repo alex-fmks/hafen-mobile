@@ -46,7 +46,9 @@ const Menucard: React.FC = () => {
         renderItem={({ item }) => (
           <MenuItem
             label={item}
-            onPress={() => navigation.navigate("DrinkCategory")}
+            onPress={() =>
+              navigation.navigate("DrinkCategory", { category: item })
+            }
           />
         )}
       />

@@ -109,7 +109,7 @@ export type RootStackParamList = {
   Instagram: undefined;
   Location: undefined;
   Menucard: undefined;
-  DrinkCategory: undefined;
+  DrinkCategory: { category: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
