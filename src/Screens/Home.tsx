@@ -24,22 +24,6 @@ const Home: React.FC = () => {
               source={require("../../assets/images/riff-hafen.png")}
             />
           </Event>
-          <Event
-            title="Ein Schiff wird kommen!"
-            date="Freitag, 28. November 2025 ab 22 Uhr"
-            intro="Ahoi! Ahoi! Ahoi! EIN SCHIFF WIRD KOMMEN - Die schön schwule Schlagernacht im Hafen!"
-            hosts="Mit DJ derMicha (@el_wilke) und Gastgeber Micha de Sube (@michadesube)"
-            motto="Tanz mit Liebe, tanz mit uns! Ahoi und Remmidemmi mit deiner heißgeliebten Hafencrew."
-          >
-            <Image
-              style={{
-                width: "100%",
-                height: 200,
-                borderRadius: 8,
-              }}
-              source={require("../../assets/images/eswk.png")}
-            />
-          </Event>
           <Text style={styles.text}></Text>
         </ScrollView>
       </SafeAreaView>
